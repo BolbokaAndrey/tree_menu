@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+{% load tree_menu_tags %}
+{% block title %}Меню{% endblock %}
+{% block content %}
+
+    {% draw_menu 'main_menu' %}
+
+    {% draw_menu 'second_menu' %}
+
+{% endblock %}

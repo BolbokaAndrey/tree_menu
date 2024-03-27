@@ -1,0 +1,10 @@
+<ul>
+    {% for item_child in cur_item.children.all %}
+        <li><a href="{% url 'index' %}?menu_name={{ item_child.menu }}&menu_item={{ item_child.url }}">{{ item_child }}</a></li>
+
+        {% if item_child.children.exists and item_child == list|last %}
+            {% include 'tree_menu/menu_ul.html' with cur_item=list.pop list=list %}
+        {% endif %}
+
+    {% endfor %}
+</ul>

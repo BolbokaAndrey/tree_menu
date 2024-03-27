@@ -1,0 +1,10 @@
+<div>
+    <h3><a href="{% url 'index' %}?menu_name={{ menu_name }}&menu_item={{ menu_name }}">{{ menu_name }}</a></h3>
+
+    {% if cur_menu == menu_name %}
+        {% include 'tree_menu/menu_ul.html' with cur_item=list.pop list=list %}
+    {% endif %}
+</div>
+
+
+
